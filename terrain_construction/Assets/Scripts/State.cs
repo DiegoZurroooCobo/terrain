@@ -22,10 +22,13 @@ public abstract class State : ScriptableObject
 
     //private bool CheckActions()
     //{
-    //    for (int i = 0; i < stateparameters.Length; i++)
-    //    {
-
-    //    }
+    //   for (int i = 0; i < stateparameters.Length; i++)
+    //   {
+    //        if(stateparameters[i].actionValue) 
+    //        {
+    //            StateParameters.actionValue;
+    //        }
+    //   }
     //}
     public abstract State Run(GameObject owner);
 }
