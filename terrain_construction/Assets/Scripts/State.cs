@@ -5,7 +5,7 @@ using UnityEngine;
 [System.Serializable]
 public struct StateParameters
 {
-    [Tooltip("Indicates if the action´s check must be true or false")]
+    [Tooltip("Indicates if the actionï¿½s check must be true or false")]
     public bool actionValue;
     [Tooltip("Action that is gonna be executed")]
     public Action action;
