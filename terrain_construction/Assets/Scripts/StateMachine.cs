@@ -9,12 +9,20 @@ public class StateMachine : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        currentState = initialState; 
+        currentState = initialState;
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+       StateParameters stateParameters = new StateParameters();
+       if(currentState == stateParameters.action) 
+        { 
+            currentState = stateParameters.nextState; 
+        }
     }
+
+
+
 }
