@@ -20,12 +20,16 @@ public abstract class State : ScriptableObject
     // Action [] actions
     // [CreateAssetMenu()]
 
-    //private bool CheckActions()
-    //{
-    //    for (int i = 0; i < stateparameters.Length; i++)
-    //    {
-
-    //    }
-    //}
+    private State CheckActions(GameObject owner)
+    {
+        for (int i = 0; i < stateparameters.Length; i++)
+        {
+            if (stateparameters[i].actionValue == stateparameters[i].action.Check(owner))  
+            { 
+                return stateparameters[i].nextState;
+            }
+        }
+        return null;   
+    }
     public abstract State Run(GameObject owner);
 }

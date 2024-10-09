@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 989
   m_ShowMode: 4
-  m_Title: Game
+  m_Title: Project
   m_RootView: {fileID: 3}
   m_MinSize: {x: 875, y: 321}
   m_MaxSize: {x: 10000, y: 10000}
@@ -146,7 +146,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 37
+  controlID: 94
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -2562,7 +2562,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: e012feffca14feff16fbffff
+      m_ExpandedIDs: 16fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -3068,13 +3068,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.038574897, y: -0.93968713, z: -0.113006786, w: -0.3206447}
+    m_Target: {x: -0.016324347, y: -0.9466539, z: 0.048622716, w: -0.3182761}
     speed: 2
-    m_Value: {x: 0.038573287, y: -0.9396479, z: -0.11300207, w: -0.32063133}
+    m_Value: {x: -0.016323661, y: -0.9466142, z: 0.048620675, w: -0.31826276}
   m_Size:
-    m_Target: 15.158897
+    m_Target: 13.825294
     speed: 2
-    m_Value: 15.158897
+    m_Value: 13.825294
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -3144,7 +3144,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scenes
+    - Assets/Scripts
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -3152,16 +3152,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 96
   m_LastFolders:
-  - Assets/Scenes
+  - Assets/Scripts
   m_LastFoldersGridSize: 96
   m_LastProjectPath: D:\DiegoZC\desarrollo de entornos interactivos\terrain\terrain_construction
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 70}
-    m_SelectedIDs: 927a0000
-    m_LastClickedID: 31378
-    m_ExpandedIDs: 000000000c790000bc7a0000e087000000ca9a3bffffff7f
+    m_SelectedIDs: 087c0000
+    m_LastClickedID: 31752
+    m_ExpandedIDs: 00000000b479000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -3189,7 +3189,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000000c790000
+    m_ExpandedIDs: 00000000b4790000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
