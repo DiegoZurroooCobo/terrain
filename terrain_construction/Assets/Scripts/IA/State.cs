@@ -21,7 +21,7 @@ public abstract class State : ScriptableObject
     // Action [] actions
     // [CreateAssetMenu()]
 
-    private State CheckActions(GameObject owner)
+    protected State CheckActions(GameObject owner)
     { 
         for (int i = 0; i < stateparameters.Length; i++) // recorre el array de los parametros del estado
         {
@@ -30,7 +30,10 @@ public abstract class State : ScriptableObject
                 return stateparameters[i].nextState; // devuelve la siguiente accion
             }
         }
-        return null;   
+        return null;   // ninguna accion se cumple, por lo que no cambiamos de estado
     }
+
+    // comprueba si las acciones se cumplen y ademas
+    // ejecuta el comportamiento asociado al estado
     public abstract State Run(GameObject owner);
 }
