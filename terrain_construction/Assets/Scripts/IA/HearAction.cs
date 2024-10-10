@@ -8,7 +8,7 @@ using static UnityEngine.UI.GridLayoutGroup;
 
 public class HearAction : Action
 {
-    public float radius = 10f; 
+    public float radius = 20f; 
     public override bool Check(GameObject owner)
     {
         RaycastHit[] hits = Physics.SphereCastAll(owner.transform.position, radius, Vector3.up); // castea una esfera
@@ -25,9 +25,9 @@ public class HearAction : Action
         return false; // no le esucho
     }
 
-    public override void OnDrawGizmos()
+    public override void OnDrawGizmos(GameObject owner)
     {
         Gizmos.color = Color.red;
-        //Gizmos.DrawWireSphere(owner.transform.position, radius);
+        Gizmos.DrawWireSphere(owner.transform.position, radius);
     }
 }

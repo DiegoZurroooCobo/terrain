@@ -9,6 +9,5 @@ public abstract class Action : ScriptableObject
     public abstract bool Check(GameObject owner); // ejecutar el comportamiento de la accion
 
     // metodo abstracto de dibujar gizmo 
-
-    public abstract void OnDrawGizmos();
+    public abstract void OnDrawGizmos(GameObject owner);
 }
