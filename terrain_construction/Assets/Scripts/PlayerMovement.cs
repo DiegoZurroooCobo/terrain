@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float speed, rotationSpeed, gravityScale, jumpForce;
+    public float speed, runningSpeed, rotationSpeed, gravityScale, jumpForce;
 
-    private float yVelocity = 0;
+    private float yVelocity = 0, currentspeed;
     private CharacterController characterController;
+    private Vector3 auxMovementVector;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,11 +25,12 @@ public class PlayerMovement : MonoBehaviour
         }
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
+        bool shiftPressed = Input.GetKey(KeyCode.LeftShift);
         float mouseX = Input.GetAxis("Mouse X");
         bool jumpPressed = Input.GetKeyDown(KeyCode.Space);
 
         Jump(jumpPressed);
-        Movement(x, z);
+        Movement(x, z, shiftPressed);
         //Rotation(mouseX);
     }
 
@@ -40,14 +42,30 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    void Movement(float x, float z)
+    void Movement(float x, float z, bool shiftPressed)
     {
-        Vector3 movementVector = transform.forward * speed * z + transform.right * speed * x;
+        if (shiftPressed)
+        {
+            currentspeed = runningSpeed;
+        }
+        else
+        {
+            currentspeed = speed;
+        }
+        Vector3 movementVector = transform.forward * currentspeed * z + transform.right * currentspeed * x;
+        auxMovementVector = movementVector;
+
         yVelocity -= gravityScale;
+
         movementVector.y = yVelocity;
 
         movementVector *= Time.deltaTime; // se mueve igual si importar el framerate
         characterController.Move(movementVector); // metodo de character controller para moverlo
+    }
+
+    public Vector3 GetMovementVector()
+    {
+        return auxMovementVector;
     }
 
     void Rotation(float mouseX)

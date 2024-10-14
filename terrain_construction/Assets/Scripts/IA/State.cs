@@ -18,6 +18,14 @@ public abstract class State : ScriptableObject
 
     public StateParameters[] stateparameters;
 
+    public void DrawAllActionsGizmos(GameObject owner) 
+    { 
+        for(int i = 0; i < stateparameters.Length; i++) 
+        {
+            stateparameters[i].action.DrawGizmos(owner);
+        }
+    }
+
     // Action [] actions
     // [CreateAssetMenu()]
 

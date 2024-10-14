@@ -6,13 +6,11 @@ using UnityEngine;
 public class StateMachine : MonoBehaviour
 {
     public State initialState;
-    private State currentState;
-    private HearAction actionDraw;
+    public State currentState;
     // Start is called before the first frame update
     void Start()
     {
         currentState = initialState; 
-        actionDraw = GetComponent<HearAction>();    
     }
 
     // Update is called once per frame
@@ -24,9 +22,19 @@ public class StateMachine : MonoBehaviour
         { 
             currentState = nextstate; 
         }
-
-        actionDraw.OnDrawGizmos(gameObject);
         
+    }
+
+    private void OnDrawGizmos()
+    {
+        if(currentState) //si el current state tiene informacion 
+        {
+            currentState.DrawAllActionsGizmos(gameObject); // llama al metodo de dibujar el gizmo desde le state
+        }
+        else // si no tiene nada 
+        { 
+            initialState.DrawAllActionsGizmos(gameObject); // llama al initialState
+        }
     }
     // llamarlo aqui el OnDrawGizmo
 }
