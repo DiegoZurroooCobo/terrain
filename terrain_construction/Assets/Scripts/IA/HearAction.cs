@@ -4,7 +4,7 @@ using UnityEditor;
 using UnityEngine;
 using static UnityEngine.UI.GridLayoutGroup;
 
-[CreateAssetMenu(fileName = "HearAction(A)", menuName = "ScriptableObject/Action/HearAction")] // 
+[CreateAssetMenu(fileName = "HearAction(A)", menuName = "ScriptableObject/Action/HearAction")]
 
 public class HearAction : Action
 {

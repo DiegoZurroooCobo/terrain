@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.AI;
 
 
-[CreateAssetMenu(fileName = "GuardState (S)", menuName = "ScriptableObject/States/GuardStates")] // 
+[CreateAssetMenu(fileName = "GuardState (S)", menuName = "ScriptableObject/States/GuardStates")]
 
 public class GuardState : State
 {

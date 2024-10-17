@@ -2,14 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+[System.Serializable]
+public struct ActionParameters
+{
+   
+    [Tooltip("Action that is gonna be executed")]
+    public Action actions;
+    [Tooltip("Indicates if the actions check must be true or false")]
+    public bool actionValues;
+}
 
 [System.Serializable]
 public struct StateParameters
 {
-    [Tooltip("Indicates if the actions check must be true or false")]
-    public bool[] actionsValues;
-    [Tooltip("Action that is gonna be executed")]
-    public Action[] actions;
+    [Tooltip("ActionsParameter´s array")]
+    public ActionParameters[] actionParameters;
     [Tooltip("if the actions check equals actionsValue, nextState is pushed")]
     public State nextState;
     [Tooltip("All actions are executed or just one?")]
@@ -24,10 +31,9 @@ public abstract class State : ScriptableObject
     { 
         foreach( StateParameters parameters in stateparameters ) 
         {
-            foreach(Action action in parameters.actions) 
+            foreach(ActionParameters Av in parameters.actionParameters) 
             { 
-                if(action)
-                    action.DrawGizmos(owner);
+                    Av.actions.DrawGizmos(owner);
             }
         }
     }
@@ -40,9 +46,10 @@ public abstract class State : ScriptableObject
         for (int i = 0; i < stateparameters.Length; i++) // recorre el array de los parametros del estado
         {
             bool todaslasAccionesSeHanCumplido = true;
-            for( int j = 0; j < stateparameters[i].actions.Length; j++) 
+            for( int j = 0; j < stateparameters[i].actionParameters.Length; j++) // recorre un segundo array de las acciones 
             {
-                if (stateparameters[i].actions[j].Check(owner) == stateparameters[i].actionsValues[j]) 
+                ActionParameters actionparameter = stateparameters[i].actionParameters[j]; // evitamos repetir codigo
+                if (actionparameter.actions.Check(owner) == actionparameter.actionValues) // si las acciones on iguales al valor
                 {
                     if (!stateparameters[i].and) // si solo se tiene que cumplir una 
                     { 
