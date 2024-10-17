@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     public AudioClip enterClip, exitClip;
     // enum = para facilitar la lectura del codigo 
     private float time;
-    private int score, lifes = 5;
+    private int score, lifes;
     private void Awake() // primer metodo que se ejecuta en Unity 
     {
         // Singleton dos caracteristicas: - Solo existe una instancia de esa clase

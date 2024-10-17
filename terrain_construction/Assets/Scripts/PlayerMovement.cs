@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -72,5 +73,13 @@ public class PlayerMovement : MonoBehaviour
     {
         Vector3 rotation = new Vector3(0, mouseX, 0) * rotationSpeed * Time.deltaTime;
         transform.Rotate(rotation); // el transform rote a la rotacion a la que estamos moviendo
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.GetComponent<NavMeshAgent>())
+        {
+            GameManager.instance.SetLifes(GameManager.instance.GetLifes() - 1);
+        }
     }
 }

@@ -11,6 +11,7 @@ public class UpdateText : MonoBehaviour
     private void Start()
     {
         text = GetComponent<TMP_Text>();
+        GameManager.instance.SetLifes(5);
     }
     void Update()
     {
@@ -23,7 +24,7 @@ public class UpdateText : MonoBehaviour
                 text.text = "Points: " + GameManager.instance.GetScore();
                 break;
             case GameManager.GameManagerVariables.LIFES:
-                text.text = "Life " + GameManager.instance.GetLifes();
+                text.text = "Lifes: " + GameManager.instance.GetLifes();
                 break;
             default:
                 break;
