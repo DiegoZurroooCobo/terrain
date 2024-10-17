@@ -13,7 +13,10 @@ MonoBehaviour:
   m_Name: GuardState (S)
   m_EditorClassIdentifier: 
   stateparameters:
-  - actionValue: 1
-    action: {fileID: 11400000, guid: 1d8d670bf1fc6ab4f8c68f445911ee8f, type: 2}
+  - actionsValues: 0101
+    actions:
+    - {fileID: 11400000, guid: 6dfe6b2ce6c6aa94b87bfe9cd8c5b452, type: 2}
+    - {fileID: 11400000, guid: 1d8d670bf1fc6ab4f8c68f445911ee8f, type: 2}
     nextState: {fileID: 11400000, guid: 1e2727991b5cf14409258398aab8283b, type: 2}
+    and: 1
   guardPoint: {x: 22.213684, y: 1.04, z: 89.05844}

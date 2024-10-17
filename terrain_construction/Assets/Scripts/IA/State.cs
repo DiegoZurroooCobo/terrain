@@ -24,9 +24,10 @@ public abstract class State : ScriptableObject
     { 
         foreach( StateParameters parameters in stateparameters ) 
         {
-            foreach(Action actions in parameters.actions) 
+            foreach(Action action in parameters.actions) 
             { 
-                actions.DrawGizmos(owner);
+                if(action)
+                    action.DrawGizmos(owner);
             }
         }
     }
