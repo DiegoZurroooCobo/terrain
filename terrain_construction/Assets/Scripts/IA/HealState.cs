@@ -4,7 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
-[CreateAssetMenu(fileName = "HealState (H)", menuName = "ScriptableObject/States/HealStates")]
+[CreateAssetMenu(fileName = "HealState (S)", menuName = "ScriptableObject/States/HealStates")]
 
 public class HealState : State
 {
