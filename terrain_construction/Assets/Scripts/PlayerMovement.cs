@@ -5,11 +5,13 @@ using UnityEngine.AI;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float speed, runningSpeed, rotationSpeed, gravityScale, jumpForce;
+    [Header("Fisicas")]
+    public float walkingSpeed, runningSpeed, acceleration, rotationSpeed, gravityScale, jumpForce;
 
-    private float yVelocity = 0, currentspeed;
+    private float yVelocity = 0, currentspeed, x , z;
     private CharacterController characterController;
     private Vector3 auxMovementVector;
+    private bool shiftPressed;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,15 +26,18 @@ public class PlayerMovement : MonoBehaviour
         {
             yVelocity = 0;
         }
-        float x = Input.GetAxis("Horizontal");
-        float z = Input.GetAxis("Vertical");
-        bool shiftPressed = Input.GetKey(KeyCode.LeftShift);
+        x = Input.GetAxis("Horizontal");
+        z = Input.GetAxis("Vertical");
+        shiftPressed = Input.GetKey(KeyCode.LeftShift);
         float mouseX = Input.GetAxis("Mouse X");
         bool jumpPressed = Input.GetKeyDown(KeyCode.Space);
 
         Jump(jumpPressed);
+        InterpolateSpeed();
         Movement(x, z, shiftPressed);
         //Rotation(mouseX);
+
+        Rotation(mouseX);
     }
 
     void Jump(bool jumpPressed)
@@ -45,14 +50,6 @@ public class PlayerMovement : MonoBehaviour
 
     void Movement(float x, float z, bool shiftPressed)
     {
-        if (shiftPressed)
-        {
-            currentspeed = runningSpeed;
-        }
-        else
-        {
-            currentspeed = speed;
-        }
         Vector3 movementVector = transform.forward * currentspeed * z + transform.right * currentspeed * x;
         auxMovementVector = movementVector;
 
@@ -64,9 +61,25 @@ public class PlayerMovement : MonoBehaviour
         characterController.Move(movementVector); // metodo de character controller para moverlo
     }
 
-    public Vector3 GetMovementVector()
+    void InterpolateSpeed() 
     {
-        return auxMovementVector;
+        if (shiftPressed && (x != 0 || z != 0))
+        {
+            currentspeed = Mathf.Lerp(currentspeed, runningSpeed, acceleration * Time.deltaTime);   // Interpolacion lineal. Pasa de la velocidad actual a corriendo
+        }
+        else if (x != 0 || z != 0)
+        {
+            currentspeed = Mathf.Lerp(currentspeed, walkingSpeed, acceleration * Time.deltaTime);
+        }
+        else
+        {
+            currentspeed = Mathf.Lerp(currentspeed, 0, acceleration * Time.deltaTime);
+        }
+    }
+
+    public float GetCurrentSpeed()
+    {
+        return currentspeed;
     }
 
     void Rotation(float mouseX)

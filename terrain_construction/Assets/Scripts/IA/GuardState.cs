@@ -11,11 +11,17 @@ public class GuardState : State
 {
     public Vector3 guardPoint;
 
+    public string blendParameter;
+
     public override State Run(GameObject owner)
     {
         State nextState = CheckActions(owner);
+
         NavMeshAgent navMeshAgent = owner.GetComponent<NavMeshAgent>();
+        Animator animator = navMeshAgent.GetComponent<Animator>();
+
         navMeshAgent.SetDestination(guardPoint);
+        animator.SetFloat(blendParameter, navMeshAgent.velocity.magnitude / navMeshAgent.speed);
         
 
 
