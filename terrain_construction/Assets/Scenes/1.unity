@@ -437,11 +437,7 @@ Transform:
   m_GameObject: {fileID: 203588765}
   serializedVersion: 2
   m_LocalRotation: {x: -0.08513534, y: 0.0000000085719565, z: 7.324356e-10, w: 0.9963694}
-<<<<<<< Updated upstream
   m_LocalPosition: {x: 20.099798, y: 2.3001409, z: 57.626923}
-=======
-  m_LocalPosition: {x: -0.0002025076, y: 2.3001409, z: 39.32692}
->>>>>>> Stashed changes
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -605,7 +601,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 8c4e8ac5d6b2de445b5ca0dc6a5a8d33, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 20.1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8c4e8ac5d6b2de445b5ca0dc6a5a8d33, type: 3}
       propertyPath: m_LocalPosition.y
@@ -613,7 +609,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8c4e8ac5d6b2de445b5ca0dc6a5a8d33, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 50
+      value: 68.3
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8c4e8ac5d6b2de445b5ca0dc6a5a8d33, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1020,10 +1016,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: DINO_LOW
       objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: 600275cabf4b8e24a864c09956de10ea, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1129,14 +1121,13 @@ GameObject:
   - component: {fileID: 411205473}
   - component: {fileID: 411205472}
   - component: {fileID: 411205471}
-  - component: {fileID: 411205477}
   m_Layer: 0
   m_Name: HealingThing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &411205471
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1258,19 +1249,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &411205477
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 411205470}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b1ea23679db34f49a08128b305846ec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Target: {fileID: 1888732414}
 --- !u!1 &496851636
 GameObject:
   m_ObjectHideFlags: 0
@@ -2735,7 +2713,7 @@ MonoBehaviour:
   walkingSpeed: 10
   runningSpeed: 20
   acceleration: 1
-  rotationSpeed: 587.8
+  rotationSpeed: 200
   gravityScale: 0.3
   jumpForce: 62.3
 --- !u!114 &1888732419
@@ -2954,7 +2932,7 @@ MonoBehaviour:
   m_RecenterToTargetHeading:
     m_enabled: 1
     m_WaitTime: 0
-    m_RecenteringTime: 0.3
+    m_RecenteringTime: 0.2
     m_LegacyHeadingDefinition: -1
     m_LegacyVelocityFilterStrength: -1
   m_BindingMode: 3
@@ -2965,7 +2943,7 @@ MonoBehaviour:
   - m_Height: -1.43
     m_Radius: 10.6
   - m_Height: -2.38
-    m_Radius: 9.6
+    m_Radius: 4.99
   m_LegacyHeadingBias: 3.4028235e+38
   m_Rigs:
   - {fileID: 995067848}
@@ -2980,7 +2958,7 @@ Transform:
   m_GameObject: {fileID: 1961864505}
   serializedVersion: 2
   m_LocalRotation: {x: 0.0072578294, y: -0, z: -0, w: 0.9999737}
-  m_LocalPosition: {x: -0.0002025076, y: 2.3001409, z: 39.32692}
+  m_LocalPosition: {x: 20.099798, y: 2.3001409, z: 57.626923}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
