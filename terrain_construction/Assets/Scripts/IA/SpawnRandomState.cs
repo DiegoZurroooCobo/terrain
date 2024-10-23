@@ -10,9 +10,9 @@ public class SpawnRandomState : State
     private float time = 0f;
     public override State Run(GameObject owner)
     {
+        time = Time.deltaTime;
         State nextState = CheckActions(owner);
         NavMeshAgent navMeshAgent = owner.GetComponent<NavMeshAgent>();
-        time = Time.deltaTime;
 
         if (time >= 5f)
         {
