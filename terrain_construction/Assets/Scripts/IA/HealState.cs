@@ -13,15 +13,12 @@ public class HealState : State
         State nextState = CheckActions(owner);
         NavMeshAgent navMeshAgent = owner.GetComponent<NavMeshAgent>();
         GameObject target = owner.GetComponent<TargetReference>().Target;
-        
-        Collider collider = target.GetComponent<Collider>();
-        if(collider) 
-        {
-            int life = GameManager.instance.GetLifes();
-            GameManager.instance.SetLifes(life + 1);
+        //life = GameManager.instance.SetLifes(GameManager.instance.GetLifes() + 1);
 
-            Destroy(this.GameObject());
-        }
+        //target.GetComponent<PlayerMovement>().life;
+
+
+
         return nextState;
     }
 }

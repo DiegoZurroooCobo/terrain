@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 989
   m_ShowMode: 4
-  m_Title: Hierarchy
+  m_Title: Project
   m_RootView: {fileID: 3}
   m_MinSize: {x: 875, y: 321}
   m_MaxSize: {x: 10000, y: 10000}
@@ -34,7 +34,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: ConsoleWindow
+  m_Name: ProjectBrowser
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
@@ -43,14 +43,14 @@ MonoBehaviour:
     y: 633
     width: 1427
     height: 306
-  m_MinSize: {x: 101, y: 121}
-  m_MaxSize: {x: 4001, y: 4021}
-  m_ActualView: {fileID: 19}
+  m_MinSize: {x: 231, y: 271}
+  m_MaxSize: {x: 10001, y: 10021}
+  m_ActualView: {fileID: 18}
   m_Panes:
   - {fileID: 18}
   - {fileID: 19}
-  m_Selected: 1
-  m_LastSelected: 0
+  m_Selected: 0
+  m_LastSelected: 1
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -146,7 +146,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 128
+  controlID: 41
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -216,8 +216,8 @@ MonoBehaviour:
     y: 0
     width: 271
     height: 633
-  m_MinSize: {x: 201, y: 221}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 16}
   m_Panes:
   - {fileID: 16}
@@ -3050,18 +3050,18 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 40faffff
+      m_ExpandedIDs: fafaffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: Canvas
-        m_OriginalName: Canvas
+        m_Name: Terrain
+        m_OriginalName: Terrain
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 32174
+        m_UserData: 31698
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
         m_OriginalEventType: 0
@@ -3534,9 +3534,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 21.980814, y: 1.9951577, z: 87.935394}
+    m_Target: {x: 4.7636604, y: -24.1648, z: 15.965853}
     speed: 2
-    m_Value: {x: 21.980814, y: 1.9951577, z: 87.935394}
+    m_Value: {x: 4.7636604, y: -24.1648, z: 15.965853}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -3582,13 +3582,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.050822537, y: 0.7059099, z: -0.05091332, w: 0.7046431}
+    m_Target: {x: -0.16793615, y: 0.80123025, z: -0.26374236, w: -0.5101783}
     speed: 2
-    m_Value: {x: 0.050898705, y: 0.70485014, z: -0.050836883, w: 0.70569915}
+    m_Value: {x: -0.16718695, y: 0.80047643, z: -0.26083517, w: -0.5130798}
   m_Size:
-    m_Target: 2.8167527
+    m_Target: 47.75333
     speed: 2
-    m_Value: 2.9494793
+    m_Value: 47.75333
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -3658,7 +3658,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts/ScripableObject
+    - Assets/Scripts/IA
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -3666,27 +3666,27 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 96
   m_LastFolders:
-  - Assets/Scripts/ScripableObject
+  - Assets/Scripts/IA
   m_LastFoldersGridSize: 96
   m_LastProjectPath: D:\DiegoZC\desarrollo de entornos interactivos\terrain\terrain_construction
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 63.80002}
-    m_SelectedIDs: 80800000
-    m_LastClickedID: 32896
-    m_ExpandedIDs: 00000000547f0000328000003480000000ca9a3bffffff7f
+    m_SelectedIDs: 66800000
+    m_LastClickedID: 32870
+    m_ExpandedIDs: 000000003a7f0000248000002880000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: Shaders
-      m_OriginalName: Shaders
+      m_Name: ScripableObject
+      m_OriginalName: ScripableObject
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 32822
+      m_UserData: 32868
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
       m_OriginalEventType: 0
@@ -3703,7 +3703,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000547f0000
+    m_ExpandedIDs: 000000003a7f0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -3728,9 +3728,9 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: c27d0000
-    m_LastClickedInstanceID: 32194
-    m_HadKeyboardFocusLastEvent: 0
+    m_SelectedInstanceIDs: 
+    m_LastClickedInstanceID: 0
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: 8e6400009664000006af0000d4c600007ac500008c6200005462000084bf00001cfc0000b47700007c800000067a000078a8000000000000c0880000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -3747,7 +3747,7 @@ MonoBehaviour:
       m_IsRenaming: 0
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
-      m_ClientGUIView: {fileID: 10}
+      m_ClientGUIView: {fileID: 2}
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
       m_InstanceID: 0
