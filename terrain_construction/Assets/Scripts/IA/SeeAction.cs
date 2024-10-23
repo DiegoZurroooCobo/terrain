@@ -6,14 +6,13 @@ using UnityEngine;
 
 public class SeeAction : Action
 {
-    //public override bool Check(GameObject owner)
-    //{
-        
-    //}
+    public override bool Check(GameObject owner)
+    {
+        throw new System.NotImplementedException();
+    }
 
-    //public override void DrawGizmos(GameObject owner)
-    //{
-    //    throw new System.NotImplementedException();
-    //}
-
+    public override void DrawGizmos(GameObject owner)
+    {
+        throw new System.NotImplementedException();
+    }
 }
