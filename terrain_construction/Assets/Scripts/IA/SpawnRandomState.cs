@@ -8,7 +8,7 @@ using UnityEngine.AI;
 public class SpawnRandomState : State
 {
     private float time = 0f;
-    private int x = 45;
+    private int x= 45;
     private int z = 66;
     public override State Run(GameObject owner)
     {
@@ -20,9 +20,9 @@ public class SpawnRandomState : State
         {
             x = Random.Range(0, 51);
             z = Random.Range(50, 101);
-            time = 0f;
+            time = 0f;  
         }
-        navMeshAgent.SetDestination(new Vector3(x, 0, z));
+        owner.transform.position = new Vector3(x, 1, z);
 
         return nextState;
     }
