@@ -9,10 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db3b8ee94a35a3d4e91a34fd7d52d23e, type: 3}
-  m_Name: HealState (S) - Healing
+  m_Script: {fileID: 11500000, guid: 0ee220043e9a76d48a9ccf11072fb54b, type: 3}
+  m_Name: GuardState (S) 2
   m_EditorClassIdentifier: 
-  stateparameters:
-  - actionParameters: []
-    nextState: {fileID: 0}
-    and: 0
+  stateparameters: []
+  guardPoint: {x: -96.6, y: 0.21, z: 88.5}
+  blendParameter: 

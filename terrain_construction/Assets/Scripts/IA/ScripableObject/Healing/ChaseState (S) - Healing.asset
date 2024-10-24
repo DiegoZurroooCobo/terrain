@@ -12,10 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a73f134eb3881fe47aeceb18686427d3, type: 3}
   m_Name: ChaseState (S) - Healing
   m_EditorClassIdentifier: 
-  stateparameters:
-  - actionParameters:
-    - actions: {fileID: 11400000, guid: f69d0dcc914e81c46ace8f33ddaed9c6, type: 2}
-      actionValues: 0
-    nextState: {fileID: 11400000, guid: 2e2fef27476db644d9518e137216bd40, type: 2}
-    and: 0
+  stateparameters: []
   blendParameter: 

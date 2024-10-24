@@ -7,34 +7,49 @@ using UnityEngine.AI;
 
 public class WanderState : State
 {
-    public float wanderTimer;
-    public float wanderRadius;
+    //public float wanderTimer;
+    //public float wanderRadius;
 
-    private Transform target;
-    private float time;
-    private int x;
-    private int z;
+    public float time = 0;
 
-    private void OnEnable()
-    {
-        time = wanderTimer;
-    }
+    public float range = 10000f;
+
     public override State Run(GameObject owner)
     {
         State nextState = CheckActions(owner);
         NavMeshAgent navMeshAgent = owner.GetComponent<NavMeshAgent>();
-        time += Time.deltaTime;
+        if (Mathf.Approximately(navMeshAgent.remainingDistance, navMeshAgent.stoppingDistance))
+            time -= Time.deltaTime;
 
-        if (time >= 5f)
+        if (time <= 0f)
         {
-            x = Random.Range(0, 51);
-            z = Random.Range(50, 101);
-            time = 0f;
+            time = 5f;
+            // bool pos = NavMesh.SamplePosition(owner.transform.position, out NavMeshHit hit, 100f, new NavMeshQueryFilter { agentTypeID = NavMesh.GetSettingsByIndex(0).agentTypeID, areaMask = NavMesh.AllAreas });
+            Vector3 point;
+            if (RandomPoint(owner.transform.position, range, out point))
+            {
+                navMeshAgent.SetDestination(point);
+            }
         }
-        navMeshAgent.SetDestination(new Vector3(x, 0, z));
 
         return nextState;
 
+    }
+
+    private bool RandomPoint(Vector3 center, float range, out Vector3 result) 
+    { 
+        for(int i = 0; i < 30; i++) 
+        { 
+            Vector3 randomPoint = center + Random.insideUnitSphere * range;
+            NavMeshHit hit;
+            if (NavMesh.SamplePosition(randomPoint, out hit, 1000.0f, NavMesh.AllAreas))
+            {
+                result = hit.position;
+                return true;
+            }
+        }
+        result = Vector3.zero;
+        return false;
     }
 
 }
