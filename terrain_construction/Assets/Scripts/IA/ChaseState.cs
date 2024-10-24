@@ -11,8 +11,6 @@ public class ChaseState : State
 
     public override State Run(GameObject owner)
     {
-
-
         State nextState = CheckActions(owner);
 
         NavMeshAgent navMeshAgent = owner.GetComponent<NavMeshAgent>();

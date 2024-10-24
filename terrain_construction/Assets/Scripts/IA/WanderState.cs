@@ -1,15 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
-[CreateAssetMenu(fileName = "SpawnRandomState (S)", menuName = "ScriptableObject/States/SpawnRandomStates")]
-public class SpawnRandomState : State
+[CreateAssetMenu(fileName = "WanderState (S)", menuName = "ScriptableObject/States/WanderStates")]
+
+public class WanderState : State
 {
-    private float time = 0f;
-    private int x = 45;
-    private int z = 66;
+    public float wanderTimer;
+    public float wanderRadius;
+
+    private Transform target;
+    private float time;
+    private int x;
+    private int z;
+
+    private void OnEnable()
+    {
+        time = wanderTimer;
+    }
     public override State Run(GameObject owner)
     {
         State nextState = CheckActions(owner);
@@ -25,5 +34,8 @@ public class SpawnRandomState : State
         navMeshAgent.SetDestination(new Vector3(x, 0, z));
 
         return nextState;
+
     }
+
 }
+
