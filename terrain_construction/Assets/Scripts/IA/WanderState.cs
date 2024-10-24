@@ -10,7 +10,8 @@ public class WanderState : State
     //public float wanderTimer;
     //public float wanderRadius;
 
-    public float time = 0;
+    public float currentTime = 0;
+    public float maxTime = 2.5f;
 
     public float range = 10000f;
 
@@ -18,17 +19,17 @@ public class WanderState : State
     {
         State nextState = CheckActions(owner);
         NavMeshAgent navMeshAgent = owner.GetComponent<NavMeshAgent>();
-        if (Mathf.Approximately(navMeshAgent.remainingDistance, navMeshAgent.stoppingDistance))
-            time -= Time.deltaTime;
+        if (Mathf.Approximately(navMeshAgent.remainingDistance, navMeshAgent.stoppingDistance)) //Si la distancia hasta un punto y la distancia de frenas se aproximan,
+                                                                                                //empieza a subir el tiempo
+            currentTime += Time.deltaTime;
 
-        if (time <= 0f)
+        if (currentTime >= maxTime) // su currentTime es mayor o igual al maxTime
         {
-            time = 5f;
-            // bool pos = NavMesh.SamplePosition(owner.transform.position, out NavMeshHit hit, 100f, new NavMeshQueryFilter { agentTypeID = NavMesh.GetSettingsByIndex(0).agentTypeID, areaMask = NavMesh.AllAreas });
-            Vector3 point;
-            if (RandomPoint(owner.transform.position, range, out point))
+            currentTime = 0f; // el currentTime se resetea
+            Vector3 point; 
+            if (RandomPoint(owner.transform.position, range, out point)) // RandomRange crea un punto random 
             {
-                navMeshAgent.SetDestination(point);
+                navMeshAgent.SetDestination(point); // el destino es el point que saca el RandomPoint
             }
         }
 
@@ -36,13 +37,18 @@ public class WanderState : State
 
     }
 
-    private bool RandomPoint(Vector3 center, float range, out Vector3 result) 
+    private bool RandomPoint(Vector3 center, float range, out Vector3 result) // booleano que calcula un punto random 
     { 
-        for(int i = 0; i < 30; i++) 
+        for(int i = 0; i < 30; i++) // ns porque es 30 :/
         { 
             Vector3 randomPoint = center + Random.insideUnitSphere * range;
+            // El Vector3 randompoint calculo un punto random desde el centro del objeto,
+            // multiplicando el random.InsideUnitSphere con el rango (El numero de range se lo damos nosotros) 
+            // Random.InsideUnitSpehere es un metodo de Unity que devuelve un punto random dentro o en un esfera de radio 1
             NavMeshHit hit;
-            if (NavMesh.SamplePosition(randomPoint, out hit, 1000.0f, NavMesh.AllAreas))
+            if (NavMesh.SamplePosition(randomPoint, out hit, range, NavMesh.AllAreas))
+                //NavMesh.SamplePosition encuentra el punto mas cercano en un rango especifico. Debe tener un origen de la posicion, un hit que gaurda la posicion,
+                //la distancia maxima a la que puede ir y las masl layer por las que puede ir (en este caso, todas las NavMesh)
             {
                 result = hit.position;
                 return true;
@@ -51,6 +57,8 @@ public class WanderState : State
         result = Vector3.zero;
         return false;
     }
+
+   
 
 }
 

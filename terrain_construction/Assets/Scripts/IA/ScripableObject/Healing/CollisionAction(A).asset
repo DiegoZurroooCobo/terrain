@@ -12,3 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7ea31cf3a4d5d941913557c94a73328, type: 3}
   m_Name: CollisionAction(A)
   m_EditorClassIdentifier: 
+  target: {fileID: 0}

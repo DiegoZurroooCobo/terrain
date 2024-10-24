@@ -18,5 +18,6 @@ MonoBehaviour:
       actionValues: 1
     nextState: {fileID: 11400000, guid: 51b237507ca00064b9779bb0537d1881, type: 2}
     and: 0
-  time: 5
+  currentTime: 0
+  maxTime: 2.5
   range: 50
