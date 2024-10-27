@@ -14,11 +14,13 @@ public class WanderState : State
     public float maxTime = 2.5f;
 
     public float range = 10000f;
+    public string blendParameter;
 
     public override State Run(GameObject owner)
     {
         State nextState = CheckActions(owner);
         NavMeshAgent navMeshAgent = owner.GetComponent<NavMeshAgent>();
+        Animator animator = navMeshAgent.GetComponent<Animator>();
         if (Mathf.Approximately(navMeshAgent.remainingDistance, navMeshAgent.stoppingDistance)) //Si la distancia hasta un punto y la distancia de frenas se aproximan,
                                                                                                 //empieza a subir el tiempo
             currentTime += Time.deltaTime;
@@ -33,8 +35,8 @@ public class WanderState : State
             }
         }
 
+        animator.SetFloat(blendParameter, navMeshAgent.velocity.magnitude / navMeshAgent.speed);
         return nextState;
-
     }
 
     private bool RandomPoint(Vector3 center, float range, out Vector3 result) // booleano que calcula un punto random 

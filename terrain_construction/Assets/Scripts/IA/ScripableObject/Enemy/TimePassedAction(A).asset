@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 233ec605d93b7d54e87ef5c8fcc6255f, type: 3}
   m_Name: TimePassedAction(A)
   m_EditorClassIdentifier: 
-  currentTime: 0
+  currentTime: 10

@@ -15,10 +15,10 @@ public class ChaseState : State
 
         NavMeshAgent navMeshAgent = owner.GetComponent<NavMeshAgent>();
         GameObject target = owner.GetComponent<TargetReference>().Target;
-        //Animator animator = navMeshAgent.GetComponent<Animator>();
+        Animator animator = navMeshAgent.GetComponent<Animator>();
 
         navMeshAgent.SetDestination(target.transform.position); // setdestination le dice al agente "oye tu destino es el transform del objetivo" 
-        //animator.SetFloat(blendParameter, navMeshAgent.velocity.magnitude / navMeshAgent.speed);
+        animator.SetFloat(blendParameter, navMeshAgent.velocity.magnitude / navMeshAgent.speed);
 
 
         return nextState;

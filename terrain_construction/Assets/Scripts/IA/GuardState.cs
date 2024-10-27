@@ -23,8 +23,6 @@ public class GuardState : State
         navMeshAgent.SetDestination(guardPoint);
         animator.SetFloat(blendParameter, navMeshAgent.velocity.magnitude / navMeshAgent.speed);
         
-
-
         return nextState;
     }
 }
