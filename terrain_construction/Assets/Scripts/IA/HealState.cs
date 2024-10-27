@@ -11,13 +11,7 @@ public class HealState : State
     public override State Run(GameObject owner)
     {
         State nextState = CheckActions(owner);
-        NavMeshAgent navMeshAgent = owner.GetComponent<NavMeshAgent>();
-        GameObject target = owner.GetComponent<TargetReference>().Target;
-        //life = GameManager.instance.SetLifes(GameManager.instance.GetLifes() + 1);
-
-        //target.GetComponent<PlayerMovement>().life;
-
-
+        GameManager.instance.SetLifes(GameManager.instance.GetLifes() + 1);
 
         return nextState;
     }
