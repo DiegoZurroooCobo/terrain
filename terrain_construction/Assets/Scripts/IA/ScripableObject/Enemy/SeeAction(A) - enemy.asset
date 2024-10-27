@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ce3f362db9e44d4f9374294692f5c76, type: 3}
   m_Name: SeeAction(A) - enemy
   m_EditorClassIdentifier: 
-  vision: 90
+  vision: 100
