@@ -6,8 +6,8 @@ using UnityEngine;
 
 public class TimePassedAction : Action
 {
-    public float currentTime = 0;
-    float maxTime;
+    private float currentTime = 0;
+    public float maxTime;
     public override bool Check(GameObject owner)
     {
         currentTime += Time.deltaTime;

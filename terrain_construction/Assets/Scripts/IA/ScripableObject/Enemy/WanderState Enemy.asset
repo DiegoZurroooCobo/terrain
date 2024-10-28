@@ -18,7 +18,7 @@ MonoBehaviour:
       actionValues: 1
     nextState: {fileID: 11400000, guid: 8be0d693f70175d4e9414bbde6873eed, type: 2}
     and: 0
-  currentTime: 0.032054298
+  currentTime: 0.0341097
   maxTime: 2.5
   range: 10000
   blendParameter: Speed
