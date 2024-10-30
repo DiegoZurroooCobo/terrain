@@ -7,8 +7,6 @@ using UnityEngine.AI;
 
 public class WanderState : State
 {
-    //public float wanderTimer;
-    //public float wanderRadius;
 
     public float currentTime = 0;
     public float maxTime = 2.5f;

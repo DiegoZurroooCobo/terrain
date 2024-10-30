@@ -16,4 +16,4 @@ MonoBehaviour:
   - actionParameters: []
     nextState: {fileID: 11400000, guid: 0c1d1e94b81141049b6132ea4d01dcfc, type: 2}
     and: 0
-  enemyPrefab: {fileID: 2638858644271709414, guid: 1dda316c381f7434c85d83ec9350bbd0, type: 3}
+  enemyPrefab: {fileID: 1714797760594607211, guid: 931b5223bef89ea49a8fe6bf68fec939, type: 3}

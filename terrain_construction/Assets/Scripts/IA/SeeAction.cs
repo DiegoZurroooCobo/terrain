@@ -6,7 +6,6 @@ using UnityEngine;
 
 public class SeeAction : Action
 {
-    public float vision; // el angulo que tiene de vision
     public override bool Check(GameObject owner)
     {
         GameObject target = owner.GetComponent<TargetReference>().Target;
