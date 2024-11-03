@@ -18,5 +18,5 @@ MonoBehaviour:
       actionValues: 1
     nextState: {fileID: 11400000, guid: 55848a1fdd2e84a409aafb15cfad7176, type: 2}
     and: 0
-  guardPoint: {x: 81.83, y: 0.73913, z: 84.12}
+  guardPoint: {x: 180.2, y: 8.46, z: 80.1}
   blendParameter: Speed
