@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: HealState (S) - Healing
   m_EditorClassIdentifier: 
   stateparameters:
-  - actionParameters: []
+  - actionParameters:
+    - actions: {fileID: 11400000, guid: 27a981cb307f9444cb5a1b56393315aa, type: 2}
+      actionValues: 0
     nextState: {fileID: 11400000, guid: 2e2fef27476db644d9518e137216bd40, type: 2}
     and: 0

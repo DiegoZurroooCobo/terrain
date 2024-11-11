@@ -15,6 +15,7 @@ public float currentTime = 0;
     {
         State nextState = CheckActions(owner);
         NavMeshAgent navMeshAgent = owner.GetComponent<NavMeshAgent>();
+            navMeshAgent.SetDestination(owner.transform.position);
         if (Mathf.Approximately(navMeshAgent.remainingDistance, navMeshAgent.stoppingDistance)) //Si la distancia hasta un punto y la distancia de frenas se aproximan,
                                                                                                 //empieza a subir el tiempo
             currentTime += Time.deltaTime;
@@ -26,6 +27,7 @@ public float currentTime = 0;
             if (RandomPoint(owner.transform.position, range, out point)) // RandomRange crea un punto random 
             {
                 owner.transform.position = point;
+            navMeshAgent.SetDestination(point);
             }
         }
 
