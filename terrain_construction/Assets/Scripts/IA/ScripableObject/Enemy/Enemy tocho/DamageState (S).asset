@@ -12,4 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ca5508ca2464b545a53cd6681b6aa00, type: 3}
   m_Name: DamageState (S)
   m_EditorClassIdentifier: 
-  stateparameters: []
+  stateparameters:
+  - actionParameters:
+    - actions: {fileID: 11400000, guid: 18307e2a11ea51c4eb3f0c26acc9e1c3, type: 2}
+      actionValues: 0
+    nextState: {fileID: 11400000, guid: 1e2727991b5cf14409258398aab8283b, type: 2}
+    and: 0
