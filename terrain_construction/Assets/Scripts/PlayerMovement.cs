@@ -95,4 +95,5 @@ public class PlayerMovement : MonoBehaviour
             GameManager.instance.SetLifes(GameManager.instance.GetLifes() - 1);
         }
     }
+    
 }

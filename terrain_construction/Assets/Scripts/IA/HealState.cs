@@ -8,13 +8,13 @@ using UnityEngine.AI;
 
 public class HealState : State
 {
-    private float currentTime = 0, maxTime;
+    public float currentTime = 0, maxTime;
     public override State Run(GameObject owner)
     {
         State nextState = CheckActions(owner);
         currentTime += Time.deltaTime;
-        if(currentTime >= maxTime) 
-        { 
+        if (currentTime >= maxTime)
+        {
             GameManager.instance.SetLifes(GameManager.instance.GetLifes() + 1);
             currentTime = 0;
             maxTime = 8f;
