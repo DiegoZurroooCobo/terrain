@@ -370,7 +370,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 0}
-  gameObjectToFindName: Idle
+  gameObjectToFindName: Happy Idle
 --- !u!114 &-679378838488742524
 MonoBehaviour:
   m_ObjectHideFlags: 0
