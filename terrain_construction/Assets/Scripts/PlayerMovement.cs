@@ -35,7 +35,6 @@ public class PlayerMovement : MonoBehaviour
         Jump(jumpPressed);
         InterpolateSpeed();
         Movement(x, z, shiftPressed);
-        //Rotation(mouseX);
 
         Rotation(mouseX);
     }
