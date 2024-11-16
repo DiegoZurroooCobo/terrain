@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     public AudioClip enterClip, exitClip;
     // enum = para facilitar la lectura del codigo 
     private float time;
-    private int score, lifes;
+    private int score, lifes = 100;
     private void Awake() // primer metodo que se ejecuta en Unity 
     {
         // Singleton dos caracteristicas: - Solo existe una instancia de esa clase
@@ -39,7 +39,7 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))    // Al presionar el boton de Escape te permite volver al menu desde cualquier escena 
         {
             SceneManager.LoadScene("Menu");
-            //AudioManager.instance.ClearAudios();
+            AudioManager.instance.ClearAudios();
         }
 
     }
@@ -76,18 +76,17 @@ public class GameManager : MonoBehaviour
     // callback == funcion que se va a llamar en el on click de los botones 
     public void LoadScene(string SceneName) // Te lleva a la escena que te selecciones como la primera
     {
-        Debug.Log("Play!");
         Debug.Log("Soy Concha, entro");
-        //AudioManager.instance.PlayAudio(enterClip, "enterClip");
+        AudioManager.instance.PlayAudio(enterClip, "enterClip");
         SceneManager.LoadScene(SceneName);
         // Limpia todos los sonidos que estan sonando 
-        //AudioManager.instance.ClearAudios();
+        AudioManager.instance.ClearAudios();
     }
 
     public void ExitGame() // Te permite salir del menu del juego 
     {
         Debug.Log("Exit!");
-        //AudioManager.instance.PlayAudio(exitClip, "exitClip");
+        AudioManager.instance.PlayAudio(exitClip, "exitClip");
         Application.Quit();
     }
 }
