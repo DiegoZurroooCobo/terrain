@@ -15,7 +15,7 @@ public class HealState : State
         currentTime += Time.deltaTime;
         if (currentTime >= maxTime)
         {
-            GameManager.instance.SetLifes(GameManager.instance.GetLifes() + 20);
+            GameManager.instance.SetLifes(GameManager.instance.GetLifes() + 3);
             currentTime = 0;
             maxTime = 8f;
         }

@@ -19,6 +19,7 @@ public class WanderState : State
         State nextState = CheckActions(owner);
         NavMeshAgent navMeshAgent = owner.GetComponent<NavMeshAgent>();
         Animator animator = navMeshAgent.GetComponent<Animator>();
+
         if (Mathf.Approximately(navMeshAgent.remainingDistance, navMeshAgent.stoppingDistance)) //Si la distancia hasta un punto y la distancia de frenas se aproximan,
                                                                                                 //empieza a subir el tiempo
             currentTime += Time.deltaTime;

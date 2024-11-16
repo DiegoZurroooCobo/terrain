@@ -42,6 +42,13 @@ public class GameManager : MonoBehaviour
             AudioManager.instance.ClearAudios();
         }
 
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            time = 0;
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            AudioManager.instance.ClearAudios();
+        }
+
     }
     // Getter = para obtener el valor de una variable 
     public float GetTime() // obtiene el tiempo

@@ -21,7 +21,7 @@ public class UpdateText : MonoBehaviour
                 text.text = "Time: " + GameManager.instance.GetTime().ToString("#.##");
                 break;
             case GameManager.GameManagerVariables.SCORE:
-                text.text = "Points: " + GameManager.instance.GetScore();
+                text.text = "Farm: " + GameManager.instance.GetScore();
                 break;
             case GameManager.GameManagerVariables.LIFES:
                 text.text = "Lifes: " + GameManager.instance.GetLifes();
