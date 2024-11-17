@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MinionPoints : MonoBehaviour
 {
+    private float currentTime = 0, MaxTime = 60f;
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.GetComponent<PlayerMovement>())
@@ -12,5 +13,15 @@ public class MinionPoints : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    
+
+    private void Update()
+    {
+        currentTime += Time.deltaTime;
+        if(currentTime >= MaxTime) 
+        { 
+            currentTime = 0;
+            Destroy(gameObject);
+        }
+    }
+
 }

@@ -20,7 +20,6 @@ public class ChaseState : State
         navMeshAgent.SetDestination(target.transform.position); // setdestination le dice al agente "oye tu destino es el transform del objetivo" 
         animator.SetFloat(blendParameter, navMeshAgent.velocity.magnitude / navMeshAgent.speed);
 
-
         return nextState;
     }
 }

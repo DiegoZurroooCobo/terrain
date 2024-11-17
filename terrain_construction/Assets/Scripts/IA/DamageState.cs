@@ -17,7 +17,7 @@ public class DamageState : State
         {
             GameManager.instance.SetLifes(GameManager.instance.GetLifes() - 1);
             currentTime = 0f;
-            maxTime = 3f;
+            maxTime = 1f;
         }
 
         return nextstate;

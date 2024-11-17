@@ -11,7 +11,7 @@ public class UpdateText : MonoBehaviour
     private void Start()
     {
         text = GetComponent<TMP_Text>();
-        GameManager.instance.SetLifes(5);
+        GameManager.instance.SetLifes(GameManager.instance.GetLifes());
     }
     void Update()
     {

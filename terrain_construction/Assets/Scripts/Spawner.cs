@@ -7,7 +7,7 @@ using static UnityEngine.UI.GridLayoutGroup;
 public class Spawner : MonoBehaviour
 {
     public GameObject minion;
-    public int range = 500;
+    public int range = 10000;
     private float currentTime, maxTime;
 
     private void Start()
@@ -29,7 +29,7 @@ public class Spawner : MonoBehaviour
                 minion.transform.position = point;
                 Instantiate(minion, point, Quaternion.identity);
                 currentTime = 0;
-                maxTime = 7f;
+                maxTime = 5f;
             }
         }
     }

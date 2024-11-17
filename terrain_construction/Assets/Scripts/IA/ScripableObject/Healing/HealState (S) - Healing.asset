@@ -16,5 +16,9 @@ MonoBehaviour:
   - actionParameters:
     - actions: {fileID: 11400000, guid: 27a981cb307f9444cb5a1b56393315aa, type: 2}
       actionValues: 0
+    - actions: {fileID: 11400000, guid: f69d0dcc914e81c46ace8f33ddaed9c6, type: 2}
+      actionValues: 0
     nextState: {fileID: 11400000, guid: 2e2fef27476db644d9518e137216bd40, type: 2}
-    and: 0
+    and: 1
+  currentTime: 4.886353
+  maxTime: 8

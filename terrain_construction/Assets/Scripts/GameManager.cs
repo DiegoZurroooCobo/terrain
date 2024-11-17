@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     public AudioClip enterClip, exitClip;
     // enum = para facilitar la lectura del codigo 
     private float time;
-    private int score, lifes = 100;
+    private int score, lifes = 5;
     private void Awake() // primer metodo que se ejecuta en Unity 
     {
         // Singleton dos caracteristicas: - Solo existe una instancia de esa clase
@@ -38,6 +38,7 @@ public class GameManager : MonoBehaviour
         time += Time.deltaTime;
         if (Input.GetKeyDown(KeyCode.Escape))    // Al presionar el boton de Escape te permite volver al menu desde cualquier escena 
         {
+            time = 0;
             SceneManager.LoadScene("Menu");
             AudioManager.instance.ClearAudios();
         }
@@ -45,10 +46,15 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R))
         {
             time = 0;
+            SetLifes(GetLifes() - 1);
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             AudioManager.instance.ClearAudios();
         }
 
+        if (lifes == 0)
+        {
+            SceneManager.LoadScene("Defeat");
+        }
     }
     // Getter = para obtener el valor de una variable 
     public float GetTime() // obtiene el tiempo
