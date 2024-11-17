@@ -10,7 +10,7 @@ public class TargetReference : MonoBehaviour
 
     private void Start()
     {
-        if (gameObjectToFindName != "")
-            Target = GameObject.Find(gameObjectToFindName);
+        if (gameObjectToFindName != "") // si el gameobject que buscamos es diferente del string que tenemos en el inspector
+            Target = GameObject.Find(gameObjectToFindName); // target busca el gameobject que tiene que buscar 
     }
 }

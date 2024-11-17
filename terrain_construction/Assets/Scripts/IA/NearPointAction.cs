@@ -10,7 +10,7 @@ public class NearPointAction : Action
     public override bool Check(GameObject owner)
     {
         NavMeshAgent navMeshAgent = owner.GetComponent<NavMeshAgent>();
-        if (Mathf.Approximately(navMeshAgent.remainingDistance, navMeshAgent.stoppingDistance))
+        if (Mathf.Approximately(navMeshAgent.remainingDistance, navMeshAgent.stoppingDistance)) // si se esta acercando al stopping distance 
         {
             return true;
 

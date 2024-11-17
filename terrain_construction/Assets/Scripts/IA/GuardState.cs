@@ -9,7 +9,7 @@ using UnityEngine.AI;
 
 public class GuardState : State
 {
-    public Vector3 guardPoint;
+    public Vector3 guardPoint; // un punto vector 3 donde la IA debe ir 
 
     public string blendParameter;
 
@@ -20,9 +20,9 @@ public class GuardState : State
         NavMeshAgent navMeshAgent = owner.GetComponent<NavMeshAgent>();
         Animator animator = navMeshAgent.GetComponent<Animator>();
 
-        navMeshAgent.SetDestination(guardPoint);
+        navMeshAgent.SetDestination(guardPoint); // la destinacion es el punto de guardia 
         animator.SetFloat(blendParameter, navMeshAgent.velocity.magnitude / navMeshAgent.speed);
         
-        return nextState;
+        return nextState; // se pasa al siguiente estado
     }
 }

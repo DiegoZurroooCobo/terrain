@@ -44,4 +44,6 @@ public class CameraGenshin : MonoBehaviour
         float lerpedZoomValue = Mathf.Lerp(currentDistance, currentTargetDistance, smoothing * Time.deltaTime);
         fraimingTransposer.m_CameraDistance = lerpedZoomValue;
     }
+
+    //https://youtu.be/bdMAfZBoG4U?si=LZ5WcJ-Ht-YqcvbG
 }

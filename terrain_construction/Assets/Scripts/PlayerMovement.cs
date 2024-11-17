@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("Fisicas")]
     public float walkingSpeed, runningSpeed, acceleration, rotationSpeed, gravityScale, jumpForce;
 
-    private float yVelocity = 0, currentspeed, x , z;
+    private float yVelocity = 0, currentspeed, x, z;
     private CharacterController characterController;
     private Vector3 auxMovementVector;
     private bool shiftPressed;
@@ -60,25 +60,25 @@ public class PlayerMovement : MonoBehaviour
         characterController.Move(movementVector); // metodo de character controller para moverlo
     }
 
-    void InterpolateSpeed() 
+    void InterpolateSpeed()
     {
-        if (shiftPressed && (x != 0 || z != 0))
+        if (shiftPressed && (x != 0 || z != 0)) // si se esta presionando shift y la z o la x no son 0
         {
             currentspeed = Mathf.Lerp(currentspeed, runningSpeed, acceleration * Time.deltaTime);   // Interpolacion lineal. Pasa de la velocidad actual a corriendo
         }
-        else if (x != 0 || z != 0)
+        else if (x != 0 || z != 0) // si la z o la x no son 0
         {
-            currentspeed = Mathf.Lerp(currentspeed, walkingSpeed, acceleration * Time.deltaTime);
+            currentspeed = Mathf.Lerp(currentspeed, walkingSpeed, acceleration * Time.deltaTime); // pasa a velocidad normal 
         }
-        else
+        else // si no
         {
-            currentspeed = Mathf.Lerp(currentspeed, 0, acceleration * Time.deltaTime);
+            currentspeed = Mathf.Lerp(currentspeed, 0, acceleration * Time.deltaTime); // no se mueve
         }
     }
 
     public float GetCurrentSpeed()
     {
-        return currentspeed;
+        return currentspeed; // devuelve la velocidad actual
     }
 
     void Rotation(float mouseX)
@@ -86,13 +86,4 @@ public class PlayerMovement : MonoBehaviour
         Vector3 rotation = new Vector3(0, mouseX, 0) * rotationSpeed * Time.deltaTime;
         transform.Rotate(rotation); // el transform rote a la rotacion a la que estamos moviendo
     }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.GetComponent<NavMeshAgent>())
-        {
-            GameManager.instance.SetLifes(GameManager.instance.GetLifes() - 1);
-        }
-    }
-    
 }

@@ -25,7 +25,7 @@ public class HearAction : Action
         return false; // no le esucho
     }
 
-    public override void DrawGizmos(GameObject owner)
+    public override void DrawGizmos(GameObject owner) // se dibuja la esfera 
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(owner.transform.position, radius);

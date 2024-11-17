@@ -18,22 +18,6 @@ public class SeeAction : Action
                 return true;
             }
         }
-        //Vector3 dir = target.transform.position - owner.transform.forward; // la direccion que va a tener la vista. la posicion del target menos las posicion del enemigo
-        //float angle = Vector3.Angle(dir, owner.transform.forward); // devuelve el angulo de los dos vectores. El angulo de vision
-        //Debug.DrawRay(owner.transform.position + owner.transform.up, dir); // dibujo un rayo con la direccion en la que esta mirando
-
-        //if (angle < vision * 0.5f) // si el angulo de vision que ve es menor al angulo de vision que tiene
-        //{
-        //    RaycastHit hit; // si hace un raycast
-
-        //    if (Physics.Raycast(owner.transform.position + owner.transform.up, dir.normalized, out hit, 20f)) // el raycast 
-        //    {
-        //        if (hit.collider.gameObject == target) // si el raycast colisiona con el target deveulve true
-        //        {
-        //            return true;
-        //        }
-        //    }
-        //}
         return false;
     }
 

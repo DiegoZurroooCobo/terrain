@@ -49,7 +49,7 @@ public abstract class State : ScriptableObject
             for( int j = 0; j < stateparameters[i].actionParameters.Length; j++) // recorre un segundo array de las acciones 
             {
                 ActionParameters actionparameter = stateparameters[i].actionParameters[j]; // evitamos repetir codigo
-                if (actionparameter.actions.Check(owner) == actionparameter.actionValues) // si las acciones on iguales al valor
+                if (actionparameter.actions.Check(owner) == actionparameter.actionValues) // si las acciones son iguales al valor
                 {
                     if (!stateparameters[i].and) // si solo se tiene que cumplir una 
                     { 
