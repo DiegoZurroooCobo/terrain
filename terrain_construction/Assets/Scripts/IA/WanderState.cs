@@ -8,11 +8,11 @@ using UnityEngine.AI;
 public class WanderState : State
 {
 
-    public float currentTime = 0;
     public float maxTime = 2.5f;
 
     public float range = 10000f;
     public string blendParameter;
+    private float currentTime = 0;
 
     public override State Run(GameObject owner)
     {
@@ -58,8 +58,5 @@ public class WanderState : State
         result = Vector3.zero;
         return false;
     }
-
-   
-
 }
 

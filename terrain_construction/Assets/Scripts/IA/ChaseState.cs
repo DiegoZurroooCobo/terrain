@@ -8,7 +8,6 @@ using UnityEngine.AI;
 public class ChaseState : State
 {
     public string blendParameter;
-
     public override State Run(GameObject owner)
     {
         State nextState = CheckActions(owner);
